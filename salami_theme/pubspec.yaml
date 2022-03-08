@@ -1,0 +1,61 @@
+name: salami_theme
+description: Salami Theme
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+
+dev_dependencies:
+  coverage: ^1.1.0
+  mocktail: ^0.2.0
+  test: ^1.19.2
+  very_good_analysis: ^2.4.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/animation/
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Roboto-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 600
+        - asset: assets/fonts/Roboto-BoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/Roboto-Medium.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto-MediumItalic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/Roboto-Light.ttf
+          weight: 200
+        - asset: assets/fonts/Roboto-ThinLight.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Roboto-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Roboto-ThinItalic.ttf
+          weight: 100
+          style: italic
+
+flutter_gen:
+  output: lib/src/generated/
+  line_lenght: 80
+  assets:
+    package_parameter_enabled: true
+    enabled: true
+  integrations:
+    flutter_svg: true
+    flutter_hooks: ^0.17.0
+    cached_network_image: ^3.0.0
+dependencies: 
+  flutter_svg: ^1.0.3
