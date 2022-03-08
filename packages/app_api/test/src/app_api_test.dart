@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:app_api/app_api.dart';
 import 'package:dio/dio.dart';
