@@ -5,10 +5,10 @@ abstract class SalamiColors {
   ///color white
   static const white = Colors.white;
 
-  ///color black
+  ///Color black
   static const black = Colors.black;
 
-  ///color transparent
+  ///Color transparent
   static const transparent = Colors.transparent;
 
   //primary
