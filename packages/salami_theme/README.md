@@ -6,8 +6,8 @@ A package containing ui design for salami project. Basic color schemes, icons, t
 
 ## 🔗 Links
 
+[![portfolio](https://img.shields.io/badge/devtalents-red?style=for-the-badge&logo=ko-fi&logoColor=white)](https://unitedideas.co/)
 [![github](https://img.shields.io/badge/github-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/HeyDevTalents)
-[![portfolio](https://img.shields.io/badge/devtalents-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://unitedideas.co/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/united-ideas)
 
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
