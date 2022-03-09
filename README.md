@@ -38,20 +38,34 @@ _\*Salami works on iOS, Android, Web, and Windows._
 
 ## Running Tests 🧪
 
-To run all unit and widget tests use the following command:
+To run all unit and widget tests in main directory use the following command:
 
 ```sh
 $ flutter test --coverage --test-randomize-ordering-seed random
 ```
 
-To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
+To run all tests in whole project including packages directory install [coverde](https://pub.dev/packages/coverde) and [melos](https://github.com/invertase/melos) by running:
 
 ```sh
-# Generate Coverage Report
-$ genhtml coverage/lcov.info -o coverage/
+$ dart pub global activate --source="path" . --executable="melos"
 
-# Open Coverage Report
-$ open coverage/index.html
+$ dart pub global activate coverde
+```
+
+After that just use:
+
+```sh
+$ melos test
+```
+
+To view the generated coverage report you can use [coverde](https://pub.dev/packages/coverde).
+
+```sh
+# Run All Tests, generate Coverage Report and Open it
+$ melos test_coverage
+
+# Generate Coverage Report
+$ melos generate
 ```
 
 ---
