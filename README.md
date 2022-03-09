@@ -47,8 +47,10 @@ $ flutter test --coverage --test-randomize-ordering-seed random
 To run all tests in whole project including packages directory install [coverde](https://pub.dev/packages/coverde) and [melos](https://github.com/invertase/melos) by running:
 
 ```sh
+# Melos instalation
 $ dart pub global activate --source="path" . --executable="melos"
 
+# Coverde instalation
 $ dart pub global activate coverde
 ```
 
@@ -58,10 +60,10 @@ After that just use:
 $ melos test
 ```
 
-To view the generated coverage report you can use [coverde](https://pub.dev/packages/coverde).
+To view the generated coverage report you use the following commands.
 
 ```sh
-# Run All Tests, generate Coverage Report and Open it
+# Run All Tests, Generate Coverage Report and Open it
 $ melos test_coverage
 
 # Generate Coverage Report
