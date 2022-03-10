@@ -5,9 +5,12 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
-import 'package:salami/app/app.dart';
 import 'package:salami/bootstrap.dart';
+import 'package:salami_api/salami_api.dart';
 
 void main() {
-  bootstrap(() => const App());
+  final urls = BaseUrls(
+    api: 'https://example.api.url',
+  );
+  bootstrap(urls);
 }
