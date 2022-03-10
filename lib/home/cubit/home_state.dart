@@ -1,12 +1,14 @@
 part of 'home_cubit.dart';
 
-enum HomeStatus { initial, loading, success, failure }
+enum HomeStatus { initial, loading, success }
 
 class HomeState extends Equatable {
   const HomeState({
-    this.status = HomeStatus.initial,
+    required this.status,
   });
-
+  factory HomeState.initial() => const HomeState(
+        status: HomeStatus.initial,
+      );
   final HomeStatus status;
 
   @override

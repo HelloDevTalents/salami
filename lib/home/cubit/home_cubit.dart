@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit() : super(const HomeState());
+  HomeCubit() : super(HomeState.initial());
 
   Future<void> fetchAll() async {
     emit(
@@ -13,18 +13,10 @@ class HomeCubit extends Cubit<HomeState> {
       ),
     );
 
-    try {
-      emit(
-        const HomeState(
-          status: HomeStatus.success,
-        ),
-      );
-    } on Exception {
-      emit(
-        const HomeState(
-          status: HomeStatus.failure,
-        ),
-      );
-    }
+    emit(
+      const HomeState(
+        status: HomeStatus.success,
+      ),
+    );
   }
 }

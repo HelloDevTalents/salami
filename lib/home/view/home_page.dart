@@ -45,7 +45,6 @@ class _Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
     final status = context.select((HomeCubit cubit) => cubit.state.status);
 
     switch (status) {
@@ -57,11 +56,6 @@ class _Content extends StatelessWidget {
         return const Center(
           key: Key('homeView_loading_indicator'),
           child: CircularProgressIndicator.adaptive(),
-        );
-      case HomeStatus.failure:
-        return Center(
-          key: const Key('homeView_failure_text'),
-          child: Text(l10n.fetchErrorMessage),
         );
       case HomeStatus.success:
         return const _HomeStart(
@@ -78,14 +72,16 @@ class _HomeStart extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(l10n.appName, style: SalamiTextStyle.headline1),
-        Text(l10n.appDescription, style: SalamiTextStyle.bodyText1),
-        const SizedBox(height: 20),
-        const SalamiStart(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(l10n.appName, style: SalamiTextStyle.headline1),
+          Text(l10n.appDescription, style: SalamiTextStyle.bodyText1),
+          const SizedBox(height: 20),
+          const SalamiStart(),
+        ],
+      ),
     );
   }
 }
