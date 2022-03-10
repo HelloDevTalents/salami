@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   bloc: ^8.0.3
+  dio: ^4.0.4
   firebase_messaging: ^11.2.8
   flutter:
     sdk: flutter
@@ -16,6 +17,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
+  provider: ^6.0.2
   salami_api:
     path: packages/salami_api
 
