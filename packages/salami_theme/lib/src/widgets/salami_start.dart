@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:salami_theme/salami_theme.dart';
 
+/// Default `SalamiStart` for Salami UI.
 class SalamiStart extends StatelessWidget {
   /// Default start widget Salami UI
   const SalamiStart({Key? key}) : super(key: key);
@@ -106,7 +107,7 @@ class SalamiStart extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           Text(
-            'Icons: ',
+            'Icons:',
             style: SalamiTextStyle.caption,
           ),
           Assets.icons.apple.svgResize(size: 30),
