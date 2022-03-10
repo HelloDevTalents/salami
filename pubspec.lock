@@ -420,6 +420,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
+  salami_repository:
+    dependency: "direct main"
+    description:
+      path: "packages/salami_repository"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   shelf:
     dependency: transitive
     description:
