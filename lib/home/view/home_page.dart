@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:salami/home/cubit/home_cubit.dart';
 import 'package:salami/l10n/l10n.dart';
+import 'package:salami_theme/salami_theme.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -75,6 +76,16 @@ class _HomeStart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Salami start');
+    final l10n = context.l10n;
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(l10n.appName, style: SalamiTextStyle.headline1),
+        Text(l10n.appDescription, style: SalamiTextStyle.bodyText1),
+        const SizedBox(height: 20),
+        const SalamiStart(),
+      ],
+    );
   }
 }

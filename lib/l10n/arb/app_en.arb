@@ -1,5 +1,7 @@
 {
     "@@locale": "en",
+    "appName": "Salami",
+    "appDescription": "Start page",
     "appBarTitle": "Home",
     "@appBarTitle": {
         "description": "Text appbar"
