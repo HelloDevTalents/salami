@@ -134,5 +134,20 @@ void main() {
         },
       );
     });
+
+    group('.isSignedIn', () {
+      test('returns true when dio contain auth header', () {
+        dio.options.headers.addAll(<String, String>{
+          'Authorization': '123',
+        });
+        final isSigned = subject.isSignedIn;
+        expect(isSigned, true);
+      });
+
+      test("returns false when dio doesn't contain auth header", () {
+        final isSigned = subject.isSignedIn;
+        expect(isSigned, false);
+      });
+    });
   });
 }
