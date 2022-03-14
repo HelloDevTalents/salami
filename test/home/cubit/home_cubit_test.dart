@@ -34,14 +34,24 @@ void main() {
       'emits [1] when increment is called',
       build: HomeCubit.new,
       act: (cubit) => cubit.increment(),
-      expect: () => [equals(1)],
+      expect: () => [
+        const HomeState(
+          status: HomeStatus.success,
+          counter: 1,
+        )
+      ],
     );
 
     blocTest<HomeCubit, HomeState>(
       'emits [-1] when decrement is called',
       build: HomeCubit.new,
       act: (cubit) => cubit.decrement(),
-      expect: () => [equals(-1)],
+      expect: () => [
+        const HomeState(
+          status: HomeStatus.success,
+          counter: -1,
+        )
+      ],
     );
   });
 }

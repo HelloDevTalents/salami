@@ -24,15 +24,15 @@ class MockSalamiRepository extends Mock implements SalamiRepository {}
 class MockSalamiApi extends Mock implements SalamiApi {}
 
 void main() {
-  late HomeCubit homeCubit;
+  late HomeCubit cubit;
   late SalamiRepository salamiRepository;
   late SalamiApi salamiApi;
 
   setUp(() {
-    homeCubit = MockHomeCubit();
+    cubit = MockHomeCubit();
     salamiApi = MockSalamiApi();
     salamiRepository = SalamiRepository(salamiApi);
-    when(() => homeCubit.state).thenAnswer((invocation) => HomeState.initial());
+    when(() => cubit.state).thenAnswer((invocation) => HomeState.initial());
   });
   group('App', () {
     test('has route', () {
@@ -66,7 +66,7 @@ void main() {
       testWidgets('renders current count', (tester) async {
         await tester.pumpApp(
           BlocProvider(
-            create: (context) => homeCubit,
+            create: (context) => cubit,
             child: const HomePage(),
           ),
         );
@@ -81,27 +81,29 @@ void main() {
       });
       testWidgets('calls increment when increment button is tapped',
           (tester) async {
+        when(() => cubit.state.counter).thenReturn(0);
+        when(() => cubit.increment()).thenReturn(null);
         await tester.pumpApp(
           BlocProvider(
-            create: (context) => homeCubit,
+            create: (context) => cubit,
             child: const HomePage(),
           ),
         );
         await tester.tap(find.byKey(const Key('action-button-increment')));
-        await tester.pumpAndSettle();
-        expect(find.byKey(const Key('counter-text')), findsOneWidget);
+        verifyNever(() => cubit.increment()).called(0);
       });
       testWidgets('calls increment when decrement button is tapped',
           (tester) async {
+        when(() => cubit.state.counter).thenReturn(1);
+        when(() => cubit.increment()).thenReturn(null);
         await tester.pumpApp(
           BlocProvider(
-            create: (context) => homeCubit,
+            create: (context) => cubit,
             child: const HomePage(),
           ),
         );
         await tester.tap(find.byKey(const Key('action-button-decrement')));
-        await tester.pumpAndSettle();
-        expect(find.byKey(const Key('counter-text')), findsOneWidget);
+        verifyNever(() => cubit.decrement()).called(0);
       });
     });
   });
