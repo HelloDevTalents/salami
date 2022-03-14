@@ -1,4 +1,4 @@
-name: salami
+name: ci
 
 on:
   workflow_call:
