@@ -4,14 +4,8 @@ on: [pull_request, push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v1
-        with:
-          ref: feat/datetime_utils
-      - name: Use local ci actions
-        uses: ./.github/workflows/main_workflow
-        with:
-          flutter_channel: stable
-          flutter_version: 2.10.3
+    name: Use local ci actions
+    uses: "./.github/workflows/main_workflow.yaml"
+    with:
+      flutter_channel: stable
+      flutter_version: 2.10.3
