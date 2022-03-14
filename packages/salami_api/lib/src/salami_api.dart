@@ -57,4 +57,7 @@ class SalamiApi {
       throw JsonDeserializationException();
     }
   }
+
+  /// Getter that checks if there're auth headers added
+  bool get isSignedIn => _dio.options.headers.containsKey('Authorization');
 }

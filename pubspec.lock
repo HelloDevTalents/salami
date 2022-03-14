@@ -448,10 +448,17 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
+<<<<<<< HEAD
   salami_theme:
     dependency: "direct main"
     description:
       path: "packages/salami_theme"
+=======
+  salami_repository:
+    dependency: "direct main"
+    description:
+      path: "packages/salami_repository"
+>>>>>>> develop
       relative: true
     source: path
     version: "1.0.0+1"

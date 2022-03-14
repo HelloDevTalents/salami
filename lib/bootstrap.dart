@@ -9,10 +9,12 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:salami/app/app.dart';
 import 'package:salami_api/salami_api.dart';
+import 'package:salami_repository/salami_repository.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
@@ -34,10 +36,9 @@ Future<void> bootstrap(BaseUrls baseUrls) async {
   };
   WidgetsFlutterBinding.ensureInitialized();
 
-  /* final dio = Dio(BaseOptions(baseUrl: baseUrls.api));
+  final dio = Dio(BaseOptions(baseUrl: baseUrls.api));
   final apiClient = SalamiApi(dio, baseUrls);
-  TODO(l-borkowski): Finish after adding auth repository package
-   */
+  final salamiRepository = SalamiRepository(apiClient);
 
   await runZonedGuarded(
     () async {
@@ -45,7 +46,9 @@ Future<void> bootstrap(BaseUrls baseUrls) async {
         () async => runApp(
           Provider.value(
             value: baseUrls,
-            child: const App(),
+            child: App(
+              salamiRepository: salamiRepository,
+            ),
           ),
         ),
         blocObserver: AppBlocObserver(),
