@@ -4,10 +4,6 @@ on: [pull_request, push]
 
 jobs:
   build:
-    defaults:
-      run:
-        working-directory: ${{inputs.working_directory}}
-
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
