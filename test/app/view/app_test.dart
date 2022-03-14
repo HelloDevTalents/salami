@@ -6,13 +6,33 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:salami/app/app.dart';
 import 'package:salami/counter/counter.dart';
+import 'package:salami_api/salami_api.dart';
+import 'package:salami_repository/salami_repository.dart';
+
+class MockSalamiRepository extends Mock implements SalamiRepository {}
+
+class MockSalamiApi extends Mock implements SalamiApi {}
 
 void main() {
+  late SalamiRepository salamiRepository;
+  late SalamiApi salamiApi;
+
+  setUp(() {
+    salamiApi = MockSalamiApi();
+
+    salamiRepository = SalamiRepository(salamiApi);
+  });
+
   group('App', () {
     testWidgets('renders CounterPage', (tester) async {
-      await tester.pumpWidget(const App());
+      await tester.pumpWidget(
+        App(
+          salamiRepository: salamiRepository,
+        ),
+      );
       expect(find.byType(CounterPage), findsOneWidget);
     });
   });
