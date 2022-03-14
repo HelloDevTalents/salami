@@ -12,6 +12,7 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  SvgGenImage get android => const SvgGenImage('assets/icons/android.svg');
   SvgGenImage get apple => const SvgGenImage('assets/icons/apple.svg');
 }
 

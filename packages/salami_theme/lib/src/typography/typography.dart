@@ -1,1 +1,1 @@
-export 'salami_font.dart';
+export 'font.dart';

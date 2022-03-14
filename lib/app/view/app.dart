@@ -8,9 +8,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:salami/counter/counter.dart';
+import 'package:salami/home/home.dart';
 import 'package:salami/l10n/l10n.dart';
 import 'package:salami_repository/salami_repository.dart';
+import 'package:salami_theme/salami_theme.dart';
 
 class App extends StatelessWidget {
   const App({Key? key, required this.salamiRepository}) : super(key: key);
@@ -22,18 +23,13 @@ class App extends StatelessWidget {
     return RepositoryProvider.value(
       value: salamiRepository,
       child: MaterialApp(
-        theme: ThemeData(
-          appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-          colorScheme: ColorScheme.fromSwatch(
-            accentColor: const Color(0xFF13B9FF),
-          ),
-        ),
+        theme: SalamiTheme.themeData,
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
         ],
         supportedLocales: AppLocalizations.supportedLocales,
-        home: const CounterPage(),
+        home: const HomePage(),
       ),
     );
   }
