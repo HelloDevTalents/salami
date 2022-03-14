@@ -1,1 +1,1 @@
-export 'notifications_manager.dart';
+export 'notifications_manager.nt.dart';
