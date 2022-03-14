@@ -1,7 +1,19 @@
 {
     "@@locale": "pl",
-    "counterAppBarTitle": "Licznik",
-    "@counterAppBarTitle": {
-        "description": "Tekst używany na AppBarze na ekranie CounterPage"
+    "appName": "Salami",
+    "@appName": {
+        "description": "Nazwa aplikacji"
+    },
+    "appDescription": "Strona startowa",
+    "@appDescription": {
+        "description": "Opis strony"
+    },
+    "appBarTitle": "Home",
+    "@appBarTitle": {
+        "description": "Text AppBar"
+    },
+    "fetchErrorMessage": "Wystąpił błąd pobierania",
+    "@fetchErrorMessage": {
+        "description": "Komunikat o błędzie pobierania"
     }
 }

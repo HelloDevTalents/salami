@@ -1,7 +1,19 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
+    "appName": "Salami",
+    "@appName": {
+        "description": "App name"
+    },
+    "appDescription": "Start page",
+    "@appDescription": {
+        "description": "Description page"
+    },
+    "appBarTitle": "Home",
+    "@appBarTitle": {
+        "description": "Text appbar"
+    },
+    "fetchErrorMessage": "A download error occurred",
+    "@fetchErrorMessage": {
+        "description": "Download error message"
     }
 }
