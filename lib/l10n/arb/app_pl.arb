@@ -1,10 +1,19 @@
 {
     "@@locale": "pl",
     "appName": "Salami",
+    "@appName": {
+        "description": "Nazwa aplikacji"
+    },
     "appDescription": "Strona startowa",
+    "@appDescription": {
+        "description": "Opis strony"
+    },
     "appBarTitle": "Home",
     "@appBarTitle": {
-        "description": "Text appbar"
+        "description": "Text AppBar"
     },
-    "fetchErrorMessage": "Wystąpił błąd pobierania"
+    "fetchErrorMessage": "Wystąpił błąd pobierania",
+    "@fetchErrorMessage": {
+        "description": "Komunikat o błędzie pobierania"
+    }
 }

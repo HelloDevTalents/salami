@@ -1,10 +1,19 @@
 {
     "@@locale": "en",
     "appName": "Salami",
+    "@appName": {
+        "description": "App name"
+    },
     "appDescription": "Start page",
+    "@appDescription": {
+        "description": "Description page"
+    },
     "appBarTitle": "Home",
     "@appBarTitle": {
         "description": "Text appbar"
     },
-    "fetchErrorMessage": "A download error occurred"
+    "fetchErrorMessage": "A download error occurred",
+    "@fetchErrorMessage": {
+        "description": "Download error message"
+    }
 }
