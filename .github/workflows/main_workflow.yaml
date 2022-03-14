@@ -57,7 +57,7 @@ jobs:
         run: flutter analyze lib test
 
       - name: 🧪 Run Tests
-        run: melos workflow_test_coverage
+        run: melos workflow_test
 
       - name: 📊 Check Code Coverage
         uses: VeryGoodOpenSource/very_good_coverage@v1
