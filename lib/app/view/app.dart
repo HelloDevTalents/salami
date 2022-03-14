@@ -10,8 +10,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:salami/home/home.dart';
 import 'package:salami/l10n/l10n.dart';
-import 'package:salami_theme/salami_theme.dart';
 import 'package:salami_repository/salami_repository.dart';
+import 'package:salami_theme/salami_theme.dart';
 
 class App extends StatelessWidget {
   const App({Key? key, required this.salamiRepository}) : super(key: key);
@@ -20,14 +20,17 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: SalamiTheme.themeData,
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-      ],
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const HomePage(),
+    return RepositoryProvider.value(
+      value: salamiRepository,
+      child: MaterialApp(
+        theme: SalamiTheme.themeData,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+        ],
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: const HomePage(),
+      ),
     );
   }
 }

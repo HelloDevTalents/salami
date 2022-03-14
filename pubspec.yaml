@@ -22,10 +22,10 @@ dependencies:
   provider: ^6.0.2
   salami_api:
     path: packages/salami_api
-  salami_theme:
-    path: packages/salami_theme
   salami_repository:
     path: packages/salami_repository
+  salami_theme:
+    path: packages/salami_theme
 
 dev_dependencies:
   bloc_test: ^9.0.3

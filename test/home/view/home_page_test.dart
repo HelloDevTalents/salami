@@ -12,15 +12,26 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:salami/app/app.dart';
 import 'package:salami/home/home.dart';
+import 'package:salami_api/salami_api.dart';
+import 'package:salami_repository/salami_repository.dart';
 
 import '../../helpers/pump_app.dart';
 
 class MockHomeCubit extends MockCubit<HomeState> implements HomeCubit {}
 
+class MockSalamiRepository extends Mock implements SalamiRepository {}
+
+class MockSalamiApi extends Mock implements SalamiApi {}
+
 void main() {
   late HomeCubit homeCubit;
+  late SalamiRepository salamiRepository;
+  late SalamiApi salamiApi;
+
   setUp(() {
     homeCubit = MockHomeCubit();
+    salamiApi = MockSalamiApi();
+    salamiRepository = SalamiRepository(salamiApi);
     when(() => homeCubit.state).thenAnswer((invocation) => HomeState.initial());
   });
   group('App', () {
@@ -40,7 +51,9 @@ void main() {
       expect(find.byType(HomePage), findsOneWidget);
     });
     testWidgets('renders HomePage', (tester) async {
-      await tester.pumpWidget(const App());
+      await tester.pumpWidget(
+        App(salamiRepository: salamiRepository),
+      );
       expect(find.byType(HomePage), findsOneWidget);
     });
     group('HomePage', () {
