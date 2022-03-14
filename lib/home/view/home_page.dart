@@ -62,18 +62,11 @@ class _Content extends StatelessWidget {
 
     switch (status) {
       case HomeStatus.initial:
-        return const SizedBox(
-          key: Key('homeView_initial'),
-        );
+        return const SizedBox();
       case HomeStatus.loading:
-        return const Center(
-          key: Key('homeView_loading_indicator'),
-          child: CircularProgressIndicator.adaptive(),
-        );
+        return const Center(child: CircularProgressIndicator.adaptive());
       case HomeStatus.success:
-        return const _HomeStart(
-          key: Key('homeView_success_rocketList'),
-        );
+        return const _HomeStart();
     }
   }
 }
