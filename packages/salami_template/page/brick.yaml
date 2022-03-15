@@ -1,0 +1,11 @@
+name: page
+description: Generate views of new page, state, cubit, tests.
+version: 0.1.0+1
+environment:
+  mason: ">=0.1.0-dev <0.1.0"
+vars:
+  name:
+    type: string
+    description: New page name
+    default: Dash
+    prompt: What is the name of the new page?
