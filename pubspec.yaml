@@ -26,6 +26,7 @@ dependencies:
     path: packages/salami_repository
   salami_theme:
     path: packages/salami_theme
+  shared_preferences: ^2.0.13
 
 dev_dependencies:
   bloc_test: ^9.0.3
