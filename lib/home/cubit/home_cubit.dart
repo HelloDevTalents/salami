@@ -6,7 +6,7 @@ part 'home_state.dart';
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeState.initial());
 
-  Future<void> fetchAll() async {
+  Future<void> init() async {
     emit(
       const HomeState(status: HomeStatus.success),
     );

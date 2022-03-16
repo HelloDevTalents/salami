@@ -19,6 +19,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
+  mason: ^0.1.0-dev.12
   provider: ^6.0.2
   salami_api:
     path: packages/salami_api

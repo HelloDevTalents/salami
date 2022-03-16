@@ -17,11 +17,11 @@ void main() {
         returnsNormally,
       );
     });
-    group('.fetchAll', () {
+    group('.init', () {
       blocTest<HomeCubit, HomeState>(
         'emits success status',
         build: HomeCubit.new,
-        act: (cubit) => cubit.fetchAll(),
+        act: (cubit) => cubit.init(),
         expect: () => const [
           HomeState(status: HomeStatus.success),
         ],
