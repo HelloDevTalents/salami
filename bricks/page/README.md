@@ -8,6 +8,14 @@ Generate views of new page, state, cubit, tests.
 
 ## Getting Started 🚀
 
+Loading templates
+
+```
+mason get
+```
+
+Creating a page template
+
 ```
 mason make page
 ```

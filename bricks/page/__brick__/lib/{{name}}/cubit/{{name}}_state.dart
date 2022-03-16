@@ -7,19 +7,18 @@
 
 part of '{{name}}_cubit.dart';
 
-enum {{#pascalCase}}{{name}}{{/pascalCase}}Status { initial, loading, success }
-
 class {{#pascalCase}}{{name}}{{/pascalCase}}State extends Equatable {
   const {{#pascalCase}}{{name}}{{/pascalCase}}State({
-    required this.status,
-    this.counter = 0,
+    required this.isLoading,
+    required this.hasError,
   });
   factory {{#pascalCase}}{{name}}{{/pascalCase}}State.initial() => const {{#pascalCase}}{{name}}{{/pascalCase}}State(
-        status: {{#pascalCase}}{{name}}{{/pascalCase}}Status.initial,
+        isLoading: true,
+        hasError: false,
       );
-  final {{#pascalCase}}{{name}}{{/pascalCase}}Status status;
-  final int counter;
+  final bool isLoading;
+  final bool hasError;
 
   @override
-  List<Object?> get props => [status, counter];
+  List<Object?> get props => [isLoading, hasError];
 }
