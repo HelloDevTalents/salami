@@ -15,5 +15,7 @@
     "fetchErrorMessage": "Wystąpił błąd pobierania",
     "@fetchErrorMessage": {
         "description": "Komunikat o błędzie pobierania"
-    }
+    },
+    "firstOpenTitle": "Hej 👋",
+    "firstOpenDescription": "Tutaj znajduje się dłuższy opis dialogu który użytkownik widzi pierwszy i ostatni raz"
 }
