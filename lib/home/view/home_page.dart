@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:salami/home/cubit/home_cubit.dart';
 import 'package:salami/l10n/l10n.dart';
+import 'package:salami/utils/utils.dart';
 import 'package:salami_theme/salami_theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -60,6 +62,10 @@ class _Content extends StatelessWidget {
   Widget build(BuildContext context) {
     final status = context.select((HomeCubit cubit) => cubit.state.status);
 
+    OnFirstLaunch.execute(
+      () => showFirstTimeDialog(context),
+    );
+
     switch (status) {
       case HomeStatus.initial:
         return const SizedBox();
@@ -68,6 +74,42 @@ class _Content extends StatelessWidget {
       case HomeStatus.success:
         return const _HomeStart();
     }
+  }
+
+  Future<dynamic> showFirstTimeDialog(BuildContext context) {
+    final l10n = context.l10n;
+    return showCupertinoModalPopup<dynamic>(
+      context: context,
+      builder: (context) => Center(
+        child: Material(
+          borderRadius: BorderRadius.circular(30),
+          clipBehavior: Clip.hardEdge,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            height: 170,
+            width: MediaQuery.of(context).size.width - 40,
+            child: Column(
+              children: [
+                const SizedBox(height: 20),
+                Text(
+                  l10n.firstOpenTitle,
+                  style: SalamiTextStyle.headline3,
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  l10n.firstOpenDescription,
+                  style: SalamiTextStyle.bodyText1,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
 
