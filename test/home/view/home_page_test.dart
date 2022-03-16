@@ -28,8 +28,10 @@ void main() {
   late HomeCubit cubit;
   late SalamiRepository salamiRepository;
   late SalamiApi salamiApi;
+  late SharedPreferences prefs;
 
-  setUp(() {
+  setUpAll(() async {
+    prefs = await SharedPreferences.getInstance();
     cubit = MockHomeCubit();
     salamiApi = MockSalamiApi();
     salamiRepository = SalamiRepository(salamiApi);
@@ -63,9 +65,8 @@ void main() {
         expect(find.byType(HomeView), findsOneWidget);
       });
 
+      setUp(() async => prefs.clear());
       testWidgets('renders first-time pop-up', (tester) async {
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.clear();
         await tester.pumpApp(const HomePage());
         await tester.pump();
         expect(find.byKey(const Key('first-open-dialog')), findsOneWidget);
