@@ -81,6 +81,7 @@ class _Content extends StatelessWidget {
     return showCupertinoModalPopup<dynamic>(
       context: context,
       builder: (context) => Center(
+        key: const Key('first-open-dialog'),
         child: Material(
           borderRadius: BorderRadius.circular(30),
           clipBehavior: Clip.hardEdge,

@@ -14,6 +14,7 @@ import 'package:salami/app/app.dart';
 import 'package:salami/home/home.dart';
 import 'package:salami_api/salami_api.dart';
 import 'package:salami_repository/salami_repository.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../helpers/pump_app.dart';
 
@@ -60,6 +61,14 @@ void main() {
       testWidgets('renders HomeView', (tester) async {
         await tester.pumpApp(const HomePage());
         expect(find.byType(HomeView), findsOneWidget);
+      });
+
+      testWidgets('renders first-time pop-up', (tester) async {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.clear();
+        await tester.pumpApp(const HomePage());
+        await tester.pumpAndSettle();
+        expect(find.byKey(const Key('first-open-dialog')), findsOneWidget);
       });
     });
     group('HomeCubit', () {
