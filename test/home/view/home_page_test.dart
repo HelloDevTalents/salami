@@ -67,7 +67,7 @@ void main() {
         final prefs = await SharedPreferences.getInstance();
         await prefs.clear();
         await tester.pumpApp(const HomePage());
-        await tester.pumpAndSettle();
+        await tester.pump();
         expect(find.byKey(const Key('first-open-dialog')), findsOneWidget);
       });
     });
