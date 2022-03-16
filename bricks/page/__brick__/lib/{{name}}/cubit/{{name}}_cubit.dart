@@ -13,5 +13,8 @@ part '{{name}}_state.dart';
 class {{#pascalCase}}{{name}}{{/pascalCase}}Cubit extends Cubit<{{#pascalCase}}{{name}}{{/pascalCase}}State> {
   {{#pascalCase}}{{name}}{{/pascalCase}}Cubit() : super({{#pascalCase}}{{name}}{{/pascalCase}}State.initial());
 
+  /// {@template {{name}}}
+  /// Initialization function {{#pascalCase}}{{name}}{{/pascalCase}}Cubit
+  /// {@endtemplate}
   Future<void> init() async {}
 }
