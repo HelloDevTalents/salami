@@ -1,0 +1,29 @@
+---
+- name: Copy elemental api tp remote dev
+  hosts: debian-elemental-dev
+  vars:
+    repo_path: "{{ playbook_dir }}/../"
+  tasks:
+    - name: Copying build directory
+      become: false
+      ansible.posix.synchronize:
+        src: "{{ repo_path }}/dist/"
+        dest: /home/darek/src/Elemental-Rewrite/public
+        recursive: true
+        rsync_opts:
+          - "--exclude=.git"
+          - "--exclude=.ansible"
+    - name: Copying the nuxt directory
+      become: false
+      ansible.posix.synchronize:
+        src: "{{ repo_path }}/dist/public/_nuxt/"
+        dest: "/home/darek/src/Elemental-Rewrite/public/_nuxt"
+        recursive: true
+
+    - name: Copy index template
+      ansible.builtin.copy:
+        src: "{{ repo_path }}/dist/index.html"
+        dest: "/home/darek/src/Elemental-Rewrite/frontend/templates/layouts/index.html"
+
+
+

@@ -1,0 +1,181 @@
+<template>
+  <div class="">
+    <section class="flex flex-col bg-gradient-to-br from-color2 via-color4 to-color6 min-h-screen relative">
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between py-2">
+          <a class="flex items-center" href="#">
+            <img class="block ml-3 md:m-0 w-56 md:w-72" src="~/assets/logo_white.svg" alt="logo">
+          </a>
+          <div class="flex">
+            <a class="p-2 text-md" href="#">Documentation</a>
+            <a class="p-2 text-md" href="https://github.com/HeyDevTalents/Salami">GitHub</a>
+            <a class="p-2 text-md" href="https://devtalents.com/career">Career</a>
+          </div>
+        </div>
+      </div>
+      <div class="container mx-auto items-center flex flex-col sm:flex-row py-6 md:py-32 px-3 sm:px-0">
+        <div class="flex flex-col w-full sm:w-2/3 justify-start items-start">
+          <h1 class="text-4xl sm:text-6xl xl:text-8xl m-0 text-center sm:text-left w-full mb-4 text-white font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-color3 to-color1">
+            The <span class="text-white">Salami</span> <br>starter for<br> Flutter
+          </h1>
+          <a class="sm:flex mt-10 hidden rounded-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl px-6 py-3 text-base md:text-xl font-normal hover:text-gray-100 text-white" href="#">Get started</a>
+        </div>
+        <div class="flex w-full sm:w-1/2 justify-center md:order-2">
+          <img class="block w-64 md:w-full" src="~/assets/images/home.svg" alt="logo">
+        </div>
+        <a class="flex sm:hidden mt-10 rounded-full bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl px-6 py-3 text-base md:text-xl font-normal hover:text-gray-100 text-white" href="#">Get started</a>
+      </div>
+      <div class="flex absolute w-full pointer-events-none bottom-0">
+        <img class="block h-16 w-full" src="~/assets/images/bottom.svg" alt="logo">
+      </div>
+    </section>
+    <section class="flex font-extralight text-sm">
+      <div class="container gap-8 mx-auto flex items-center flex-col md:flex-row py-6 md:pb-32 md:pt-20 px-3 sm:px-0">
+        <div class="flex flex-col w-full md:w-1/2 order-2 md:order-1">
+          <div class="w-full mb-10">
+            <div
+              class="coding inverse-toggle px-5 shadow-lg text-gray-100 text-sm font-mono subpixel-antialiased
+              bg-gray-800  pb-6 pt-4 rounded-lg leading-normal overflow-hidden"
+            >
+              <div class="top mb-2 flex">
+                <div class="h-3 w-3 bg-red-500 rounded-full" />
+                <div class="ml-2 h-3 w-3 bg-orange-300 rounded-full" />
+                <div class="ml-2 h-3 w-3 bg-green-500 rounded-full" />
+              </div>
+              <div class="mt-4 flex">
+                <span class="text-green-400">devtalents:~$</span>
+                <p class="flex-1 typing items-center pl-2">
+                  salami create .
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full">
+            <div
+              class="coding inverse-toggle px-5 shadow-lg text-gray-100 text-sm font-mono subpixel-antialiased
+              bg-gray-800  pb-6 pt-4 rounded-lg leading-normal overflow-hidden"
+            >
+              <div class="top mb-2 flex">
+                <div class="h-3 w-3 bg-red-500 rounded-full" />
+                <div class="ml-2 h-3 w-3 bg-orange-300 rounded-full" />
+                <div class="ml-2 h-3 w-3 bg-green-500 rounded-full" />
+              </div>
+              <div class="mt-4 flex">
+                <span class="text-green-400">devtalents:~$</span>
+                <p class="flex-1 typing items-center pl-2">
+                  mason make page
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col w-full md:w-1/2 order-1 md:order-2">
+          <h1 class="xl:text-4xl lg:text-3xl text-2xl text-gray-800 font-extrabold">
+            Get started
+          </h1>
+          <p class="text-black  text-base md:text-lg my-5">
+            Salami automatically generates files and prepares the environment to work. You can focus on your tasks from the beginning.
+          </p>
+          <a class="mb-1 text-lg text-blue-700 hover:text-blue-700" href="#">Documentation</a>
+        </div>
+      </div>
+    </section>
+    <section class="flex font-extralight text-sm">
+      <div class="container mx-auto sm:rounded-3xl bg-gray-100 flex items-center flex-col py-6 md:py-20 px-3 sm:px-0">
+        <div class="flex flex-col w-full mb-10">
+          <p class="tdext-gray-500 text-sm md:text-lg text-center font-norma">
+            YOUTUBE
+          </p>
+          <h1 class="xl:text-4xl lg:text-3xl text-2xl text-center text-gray-800 font-extrabold">
+            Check out the possibilities in the accompanying video.
+          </h1>
+        </div>
+        <iframe
+          style="height:500px"
+          class=" w-full sm:w-9/12"
+          src="https://www.youtube.com/embed/lytQi-slT5Y"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
+      </div>
+    </section>
+    <section class="flex font-extralight text-sm">
+      <div class="container mx-auto gap-8 flex items-start flex-col lg:flex-row py-12 md:py-32 px-3 sm:px-0">
+        <div class="flex flex-col w-full lg:w-1/3">
+          <div class="flex items-center">
+            <img class="block w-16 md:w-24" src="~/assets/icons/icon3.svg" alt="logo">
+            <h1 class="font-extrabold text-2xl m-0">
+              Made by Flutter
+            </h1>
+          </div>
+          <p class="text-black  text-base md:text-lg">
+            The salami was created with flutter using best practices. You can start your work.
+          </p>
+        </div>
+        <div class="flex flex-col w-full lg:w-1/3">
+          <div class="flex items-center">
+            <img class="block w-16 md:w-24" src="~/assets/icons/icon1.svg" alt="logo">
+            <h1 class="font-extrabold text-2xl m-0">
+              Open Source
+            </h1>
+          </div>
+          <p class="text-black text-base md:text-lg">
+            Salami is free, open-source and constantly improving. You can join our community and contribute to its development.
+          </p>
+        </div>
+        <div class="flex flex-col w-full lg:w-1/3">
+          <div class="flex items-center">
+            <img class="block w-16 md:w-24" src="~/assets/icons/icon2.svg" alt="logo">
+            <h1 class="font-extrabold text-2xl m-0">
+              Simple, beautiful code
+            </h1>
+          </div>
+          <p class="text-black  text-base md:text-lg">
+            All implemented functionalities in Salami are carefully thought out and designed with further development in mind.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="flex flex-col bg-black text-white">
+      <div class="container mx-auto flex items-start flex-col md:flex-row py-12 md:py-16 px-3 sm:px-0">
+        <div class="flex w-full mb-6">
+          <img class="block w-40 md:w-64" src="~/assets/logo_white.svg" alt="logo">
+        </div>
+        <div class="flex flex-row justify-between w-full text-xs md:text-base">
+          <div class="flex flex-col">
+            <span class="flex text-gray-400 mb-3">Documentation</span>
+            <a class="mb-1" href="#">Getting started</a>
+          </div>
+          <div class="flex flex-col">
+            <span class="flex text-gray-400 mb-3">Community</span>
+            <a class="mb-1" href="https://github.com/HeyDevTalents/Salami">GitHub</a>
+            <a class="mb-1" href="https://github.com/HeyDevTalents/salami/issues">Issue</a>
+            <a class="mb-1" href="https://www.linkedin.com/company/heydevtalents/">LinkedIn</a>
+          </div>
+          <div class="flex flex-col">
+            <span class="flex text-gray-400 mb-3">Career</span>
+            <a class="mb-1" href="https://devtalents.com/career">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex text-gray-400 py-2 md:py-6 border-t border-gray-800">
+        <div class="container mx-auto flex px-3 sm:px-0 justify-end">
+          <div class="flex font-extralight text-xs">
+            All rights reserved © 2022 devtalents.com
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+<script>
+export default {
+  name: 'Index',
+  layout: 'home'
+}
+</script>
+
+<style scoped>
+</style>
