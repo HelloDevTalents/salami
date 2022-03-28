@@ -1,0 +1,35 @@
+name: salami
+
+packages:
+  - "*"
+  - packages/**
+
+scripts:
+  test_coverage:
+    description: Merge all packages coverage tracefiles ignoring data related to generated files.
+    run: >
+      coverde rm MELOS_ROOT_PATH/coverage/filtered.lcov.info &&
+      melos exec flutter test --coverage --test-randomize-ordering-seed random &&
+      melos exec --file-exists=coverage/lcov.info -- coverde filter --input ./coverage/lcov.info --output MELOS_ROOT_PATH/coverage/filtered.lcov.info --filters \.g\.dart,\.nt\.dart &&
+      coverde report -o coverage/html --high 100 -l -i coverage/filtered.lcov.info &&
+      coverde value -i  coverage/filtered.lcov.info --no-verbose
+
+  test:
+    description: Run test on all packages.
+    run: >
+      melos exec flutter test --coverage --test-randomize-ordering-seed random &&
+      melos exec coverde value -i  coverage/lcov.info --no-verbose
+
+  generate:
+    description: Generate merged coverage from existing coverege files.
+    run: >
+      coverde rm MELOS_ROOT_PATH/coverage/filtered.lcov.info &&
+      melos exec --file-exists=coverage/lcov.info -- coverde filter --input ./coverage/lcov.info --output MELOS_ROOT_PATH/coverage/filtered.lcov.info --filters \.g\.dart,\.nt\.dart &&
+      coverde value -i  coverage/filtered.lcov.info --no-verbose
+
+  workflow_test:
+    description: copy of test_coverege command with changed parameters for github actions.
+    run: >
+      coverde rm MELOS_ROOT_PATH/coverage/filtered.lcov.info &&
+      melos exec flutter test --coverage --test-randomize-ordering-seed random &&
+      melos exec --file-exists=coverage/lcov.info -- coverde filter --input ./coverage/lcov.info --output MELOS_ROOT_PATH/coverage/filtered.lcov.info --filters \.g\.dart,\.nt\.dart

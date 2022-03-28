@@ -1,0 +1,27 @@
+{
+    "@@locale": "en",
+    "appName": "Salami",
+    "@appName": {
+        "description": "App name"
+    },
+    "appDescription": "Start page",
+    "@appDescription": {
+        "description": "Description page"
+    },
+    "appBarTitle": "Home",
+    "@appBarTitle": {
+        "description": "Text appbar"
+    },
+    "fetchErrorMessage": "A download error occurred",
+    "@fetchErrorMessage": {
+        "description": "Download error message"
+    },
+    "firstOpenTitle": "Hey there 👋",
+    "@firstOpenTitle": {
+        "description": "Text shown in title of the dialog that pops on first launch"
+    },
+    "firstOpenDescription": "This is a description of the first launch dialog so that would be the first and last time a user sees it",
+    "@firstOpenDescription": {
+        "description": "Text shown in description of the dialog that pops on first launch"
+    }
+}
