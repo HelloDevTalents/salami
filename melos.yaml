@@ -24,11 +24,11 @@ scripts:
     description: Generate merged coverage from existing coverege files.
     run: >
       coverde rm MELOS_ROOT_PATH/coverage/filtered.lcov.info &&
-      melos exec --file-exists=coverage/lcov.info -- coverde filter --input ./coverage/lcov.info --output MELOS_ROOT_PATH/coverage/filtered.lcov.info --filters \.g\.dart &&
+      melos exec --file-exists=coverage/lcov.info -- coverde filter --input ./coverage/lcov.info --output MELOS_ROOT_PATH/coverage/filtered.lcov.info --filters \.g\.dart,\.nt\.dart &&
       coverde value -i  coverage/filtered.lcov.info --no-verbose
 
   workflow_test:
-    description: copy of test_coverega command with changed parameters for github actions.
+    description: copy of test_coverege command with changed parameters for github actions.
     run: >
       coverde rm MELOS_ROOT_PATH/coverage/filtered.lcov.info &&
       melos exec flutter test --coverage --test-randomize-ordering-seed random &&
