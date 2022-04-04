@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example.verygoodcore.salami" "\0"
+            VALUE "CompanyName", "com.example.devtalents.salami" "\0"
             VALUE "FileDescription", "salami" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "salami" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.example.verygoodcore.salami. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 com.example.devtalents.salami. All rights reserved." "\0"
             VALUE "OriginalFilename", "salami.exe" "\0"
             VALUE "ProductName", "Salami" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
