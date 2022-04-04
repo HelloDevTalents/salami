@@ -1,4 +1,4 @@
-package com.example.verygoodcore.salami
+package com.example.devtalents.salami
 
 import io.flutter.embedding.android.FlutterActivity
 
